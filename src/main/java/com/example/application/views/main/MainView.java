@@ -8,7 +8,6 @@ import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -19,10 +18,8 @@ import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
-import com.vaadin.flow.theme.Theme;
-import com.example.application.views.main.MainView;
-import com.example.application.views.helloworld.HelloWorldView;
-import com.example.application.views.about.AboutView;
+import com.example.application.views.helloworld.ScheduleView;
+import com.example.application.views.about.BookingView;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -52,22 +49,21 @@ public class MainView extends AppLayout {
         layout.add(new DrawerToggle());
         viewTitle = new H1();
         layout.add(viewTitle);
-        layout.add(new Image("images/user.svg", "Avatar"));
         return layout;
     }
 
     private Component createDrawerContent(Tabs menu) {
         VerticalLayout layout = new VerticalLayout();
-        layout.setSizeFull();
-        layout.setPadding(false);
-        layout.setSpacing(false);
-        layout.getThemeList().set("spacing-s", true);
-        layout.setAlignItems(FlexComponent.Alignment.STRETCH);
-        HorizontalLayout logoLayout = new HorizontalLayout();
-        logoLayout.setId("logo");
-        logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
-        logoLayout.add(new Image("images/logo.png", "My Project logo"));
-        logoLayout.add(new H1("My Project"));
+//        layout.setSizeFull();
+//        layout.setPadding(false);
+//        layout.setSpacing(false);
+//        layout.getThemeList().set("spacing-s", true);
+//        layout.setAlignItems(FlexComponent.Alignment.STRETCH);
+//        HorizontalLayout logoLayout = new HorizontalLayout();
+//        logoLayout.setId("logo");
+//        logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
+//        logoLayout.add(new Image("images/logo.png", "My Project logo"));
+//        logoLayout.add(new H1("My Project"));
 //        layout.add(logoLayout, menu);
         layout.add( menu);
         return layout;
@@ -84,8 +80,8 @@ public class MainView extends AppLayout {
 
     private Component[] createMenuItems() {
         return new Tab[]{
-                createTab("Hello World", HelloWorldView.class),
-                createTab("About", AboutView.class)};
+                createTab("Schedule", ScheduleView.class),
+                createTab("Booking", BookingView.class)};
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {

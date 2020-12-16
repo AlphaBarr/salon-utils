@@ -12,14 +12,13 @@ import com.example.application.views.main.MainView;
 import com.vaadin.flow.router.RouteAlias;
 
 @Route(value = "hello", layout = MainView.class)
-@PageTitle("Hello World")
-@CssImport("./styles/views/helloworld/hello-world-view.css")
+@PageTitle("Schedules")
+@CssImport("./styles/views/schedule/schedule-view.css")
 @RouteAlias(value = "", layout = MainView.class)
-public class HelloWorldView extends HorizontalLayout {
+public class ScheduleView extends HorizontalLayout {
 
-    public HelloWorldView() {
+    public ScheduleView() {
         setId("hello-world-view");
-
     }
 
 }
